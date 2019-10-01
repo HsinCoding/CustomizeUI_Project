@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIScrollViewDelegate {
 
     
     @IBOutlet weak var firstPageBtn: UIButton!
@@ -17,7 +17,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var forthPageBtn: UIButton!
     @IBOutlet weak var fifthPageBtn: UIButton!
     @IBOutlet weak var sixthPageBtn: UIButton!
+    
+    @IBOutlet weak var firstPageImage: UIImageView!
+    @IBOutlet weak var secondPageImage: UIImageView!
+    @IBOutlet weak var thirdPageImage: UIImageView!
+    @IBOutlet weak var forthPageImage: UIImageView!
+    @IBOutlet weak var fifthPageImage: UIImageView!
+    @IBOutlet weak var sixthPageImage: UIImageView!
+    
     @IBOutlet weak var vcView: UIView!
+    @IBOutlet weak var myScrollView: UIScrollView!
+    
     var arr = [Any]()
     var currentPage: Int = 0
     
@@ -46,11 +56,65 @@ class ViewController: UIViewController {
         self.vcView.addGestureRecognizer(swipeRight)
         self.vcView.addGestureRecognizer(swipeLeft)
         self.vcView.addSubview(vc.view)
+        hiddenAllPageUI()
+        //先註冊
+        NotificationCenter.default.addObserver(self, selector: #selector(pageUIChange(notification:)), name: NSNotification.Name(rawValue: "UpdateUI") , object: nil)
+    
+    }
+    
+    
+    @objc func pageUIChange(notification: Notification)  {
+        //接受響應
+        guard let userInfo = notification.userInfo else { return  }
+        guard let page: Int = userInfo["currentPage"] as? Int else { return  }
+       
+        var pageCGPoint = 35 * (page + 1)
+        if page == 0 {
+            pageCGPoint = 0
+        }
+        let position = CGPoint.init(x: pageCGPoint, y: 0)
+        myScrollView.setContentOffset(position, animated: true)
+        
+        hiddenAllPageUI()
+        switch page {
+        case 0:
+            firstPageImage.isHidden = false
+            break
+        case 1:
+            secondPageImage.isHidden = false
+            break
+        case 2:
+            thirdPageImage.isHidden = false
+            break
+        case 3:
+            forthPageImage.isHidden = false
+            break
+        case 4:
+            fifthPageImage.isHidden = false
+            break
+        case 5:
+            sixthPageImage.isHidden = false
+            break
+            
+        default:
+            break
+        }
+    }
+    
+    func hiddenAllPageUI() {
+        firstPageImage.isHidden = true
+        secondPageImage.isHidden = true
+        thirdPageImage.isHidden = true
+        forthPageImage.isHidden = true
+        fifthPageImage.isHidden = true
+        sixthPageImage.isHidden = true
     }
     
     @IBAction func pageBtnAction(_ sender: UIButton) {
-    
+        
         currentPage = sender.tag
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateUI"), object: self, userInfo:["currentPage":self.currentPage])
+        
         for vc in self.vcView.subviews {
                    vc.removeFromSuperview()
                }
@@ -72,8 +136,9 @@ class ViewController: UIViewController {
             currentPage = 0
         }
         let vc = arr[currentPage] as! FirstViewController
-      
         self.vcView.addSubview(vc.view)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateUI"), object: self, userInfo:["currentPage":self.currentPage])
     }
     
     @objc func swipeLeft(_ recognizer:UISwipeGestureRecognizer){
@@ -83,8 +148,9 @@ class ViewController: UIViewController {
             currentPage = 5
         }
         let vc = arr[currentPage] as! FirstViewController
-      
         self.vcView.addSubview(vc.view)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateUI"), object: self, userInfo:["currentPage":self.currentPage])
     }
 }
 
