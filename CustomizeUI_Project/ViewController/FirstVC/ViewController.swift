@@ -34,6 +34,9 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isTranslucent = false
+
+        
         let firstVC = FirstViewController()
         firstVC.view.backgroundColor = UIColor.red
         let secondVC = FirstViewController()
@@ -59,8 +62,11 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         hiddenAllPageUI()
         //先註冊
         NotificationCenter.default.addObserver(self, selector: #selector(pageUIChange(notification:)), name: NSNotification.Name(rawValue: "UpdateUI") , object: nil)
-    
     }
+    
+    
+    
+    
     
     
     @objc func pageUIChange(notification: Notification)  {
@@ -130,7 +136,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
     
     
     @objc func swipeRight(_ recognizer:UISwipeGestureRecognizer){
-            print("swipe ok")
+            
         currentPage += 1
         if(currentPage == arr.count) {
             currentPage = 0
@@ -140,6 +146,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "UpdateUI"), object: self, userInfo:["currentPage":self.currentPage])
     }
+    
     
     @objc func swipeLeft(_ recognizer:UISwipeGestureRecognizer){
             print("swipe ok")
