@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func toFirstVC(_ sender: Any) {
@@ -24,8 +23,12 @@ class MainViewController: UIViewController {
     @IBAction func toSecondVC(_ sender: Any) {
         let next = SecondVC()
         self.navigationController?.pushViewController(next, animated: true)
-        
-        
     }
+    
+    @IBAction func toThirdVC(_ sender: Any) {
+        let next = ThirdVC()
+        self.navigationController?.pushViewController(next, animated: true)
+    }
+    
     
 }

@@ -21,6 +21,10 @@
 		CECA2B522339C213009633D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECA2B502339C213009633D7 /* LaunchScreen.storyboard */; };
 		CECA2B5D2339C213009633D7 /* CustomizeUI_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA2B5C2339C213009633D7 /* CustomizeUI_ProjectTests.swift */; };
 		CECA2B682339C213009633D7 /* CustomizeUI_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA2B672339C213009633D7 /* CustomizeUI_ProjectUITests.swift */; };
+		CEF9612123A75E3500656A38 /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9611F23A75E3500656A38 /* ThirdVC.swift */; };
+		CEF9612223A75E3500656A38 /* ThirdVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF9612023A75E3500656A38 /* ThirdVC.xib */; };
+		CEF9612623A7754200656A38 /* ThirdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9612423A7754200656A38 /* ThirdCell.swift */; };
+		CEF9612723A7754200656A38 /* ThirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF9612523A7754200656A38 /* ThirdCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		CECA2B632339C213009633D7 /* CustomizeUI_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomizeUI_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECA2B672339C213009633D7 /* CustomizeUI_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeUI_ProjectUITests.swift; sourceTree = "<group>"; };
 		CECA2B692339C213009633D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF9611F23A75E3500656A38 /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
+		CEF9612023A75E3500656A38 /* ThirdVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdVC.xib; sourceTree = "<group>"; };
+		CEF9612423A7754200656A38 /* ThirdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdCell.swift; sourceTree = "<group>"; };
+		CEF9612523A7754200656A38 /* ThirdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThirdCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 		CE14F574233DAEF700F17C5A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CEF9611E23A75E1800656A38 /* ThirdVC */,
 				CEB76AAD23A0E339003F2A98 /* MainVC */,
 				CEB76AAC23A0E328003F2A98 /* FirstVC */,
 				CEB76AAE23A0E60D003F2A98 /* SecondVC */,
@@ -176,6 +185,25 @@
 				CECA2B692339C213009633D7 /* Info.plist */,
 			);
 			path = CustomizeUI_ProjectUITests;
+			sourceTree = "<group>";
+		};
+		CEF9611E23A75E1800656A38 /* ThirdVC */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9612323A7750300656A38 /* Cell */,
+				CEF9611F23A75E3500656A38 /* ThirdVC.swift */,
+				CEF9612023A75E3500656A38 /* ThirdVC.xib */,
+			);
+			path = ThirdVC;
+			sourceTree = "<group>";
+		};
+		CEF9612323A7750300656A38 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9612423A7754200656A38 /* ThirdCell.swift */,
+				CEF9612523A7754200656A38 /* ThirdCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,9 +311,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB76AB423A0E7B7003F2A98 /* SecondVC.xib in Resources */,
+				CEF9612723A7754200656A38 /* ThirdCell.xib in Resources */,
 				CECA2B522339C213009633D7 /* LaunchScreen.storyboard in Resources */,
 				CECA2B4F2339C213009633D7 /* Assets.xcassets in Resources */,
 				CECA2B4A2339C212009633D7 /* Main.storyboard in Resources */,
+				CEF9612223A75E3500656A38 /* ThirdVC.xib in Resources */,
 				CE14F534233C6B9B00F17C5A /* FirstViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +345,9 @@
 				CECA2B472339C211009633D7 /* ViewController.swift in Sources */,
 				CEB76AB323A0E7B7003F2A98 /* SecondVC.swift in Sources */,
 				CECA2B432339C211009633D7 /* AppDelegate.swift in Sources */,
+				CEF9612123A75E3500656A38 /* ThirdVC.swift in Sources */,
 				CEB76AAB23A0DA16003F2A98 /* MainViewController.swift in Sources */,
+				CEF9612623A7754200656A38 /* ThirdCell.swift in Sources */,
 				CECA2B4D2339C212009633D7 /* CustomizeUI_Project.xcdatamodeld in Sources */,
 				CECA2B452339C211009633D7 /* SceneDelegate.swift in Sources */,
 			);
