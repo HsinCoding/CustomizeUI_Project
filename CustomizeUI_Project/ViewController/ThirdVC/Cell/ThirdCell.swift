@@ -11,6 +11,7 @@ import UIKit
 class ThirdCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var selectedView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

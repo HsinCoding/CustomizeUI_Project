@@ -25,7 +25,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="firstVCAction:" destination="7dp-4t-aiZ" eventType="touchUpInside" id="mbk-lu-oxx"/>
+                                            <action selector="toFirstVC:" destination="7dp-4t-aiZ" eventType="touchUpInside" id="vMd-LG-juc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-9X-l5Q">

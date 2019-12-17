@@ -44,10 +44,16 @@ class ThirdVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
         
         if collectionView == menuCollectionView {
             cell!.backgroundColor = .green
+            let item = menuArray[indexPath.row]
+                if myArray.contains(item) {
+                    cell?.selectedView.image = UIImage(named: "tick")
+                } else {
+                    cell?.selectedView.image = UIImage(named: "")
+                }
             cell!.titleLabel.text = String(menuArray[indexPath.row])
             
         } else {
-            if myArray.count != 0 && myArray.count < menuArray.count{
+            if myArray.count != 0 && myArray.count <= menuArray.count{
                 cell!.backgroundColor = .brown
                 cell!.titleLabel.text = String(myArray[indexPath.row])
             }
@@ -62,9 +68,22 @@ class ThirdVC: UIViewController, UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let item = menuArray[indexPath.row]
-        myArray.append(item)
-        self.myCollectionView.reloadData()
+        if myArray.count < menuArray.count {
+            let item = menuArray[indexPath.row]
+            if !myArray.contains(item) {
+                myArray.append(item)
+                self.myCollectionView.reloadData()
+                self.menuCollectionView.reloadData()
+            } else {
+                myArray = myArray.filter { $0 != menuArray[indexPath.row] }
+                self.myCollectionView.reloadData()
+                self.menuCollectionView.reloadData()
+            }
+           
+           
+        }
+        
+       
         
     }
     

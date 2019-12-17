@@ -22,14 +22,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="ZrS-w6-Dyk">
+                        <rect key="frame" x="3" y="3" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZrS-w6-Dyk" secondAttribute="height" multiplier="1:1" id="XRp-EP-Lv6"/>
+                            <constraint firstAttribute="width" constant="15" id="lgD-Iz-1fT"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="ZrS-w6-Dyk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="3" id="0mb-iM-EgK"/>
+                <constraint firstItem="ZrS-w6-Dyk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3" id="LpI-ym-BfJ"/>
                 <constraint firstItem="miS-wp-TmI" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="P8o-HV-Ptn"/>
                 <constraint firstItem="miS-wp-TmI" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="VmB-mi-P6F"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="selectedView" destination="ZrS-w6-Dyk" id="iLO-yQ-Prt"/>
                 <outlet property="titleLabel" destination="miS-wp-TmI" id="Bum-yT-VCW"/>
             </connections>
             <point key="canvasLocation" x="128.98550724637681" y="101.78571428571428"/>
